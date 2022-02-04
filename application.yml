@@ -3,6 +3,12 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: https://service-registry-application.herokuapp.com/eureka/
   instance:
-    hostname: localhost
+    hostname: cloud-gateway-application.herokuapp.com
+    homePageUrl: http://${eureka.instance.hostname}/
+    secure-port-enabled: true
+    nonsecure-port-enabled: false
+    nonSecurePort: 80
+    securePort: 443
+    
